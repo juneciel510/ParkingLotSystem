@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/ParkingLotSystem/.vs
+/ParkingLotSystem.Algorithm/.vs/ParkingLotSystem.Algorithm
+/ParkingLotSystem.Algorithm/ParkingLotSystem.Algorithm/obj
+/ParkingLotSystem/ConsoleApp1/obj
