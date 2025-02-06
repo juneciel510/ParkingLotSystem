@@ -8,7 +8,7 @@ namespace ParkingLotSystem.Algorithm
 {
     public enum VehicleType
     {
-        None,
+        None=0,
         Motorcycle,
         Car,
         Van

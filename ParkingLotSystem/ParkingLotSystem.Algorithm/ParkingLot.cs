@@ -15,15 +15,32 @@ namespace ParkingLotSystem.Algorithm
             _parkingLotData.CheckParikingLotStatus();
         }
 
-        public void ParkMotorcycle(int spotNumber)
+        public void MotorcyclePark(int spotNumber)
 
         {
             _parkingLotData.ModifyData(spotNumber, VehicleType.Motorcycle);
         }
 
-        public void Leave(int spotNumber, VehicleType vehicle)
-        {
+        public void CarPark(int spotNumber)
 
+        {
+            _parkingLotData.ModifyData(spotNumber, VehicleType.Car);
+        }
+
+        public void VanPark(int[] spotNumbers)
+        {
+            if(spotNumbers.Length !=3) { throw new ParkingException("To park a van will need 3 spots, please check."); }
+            _parkingLotData.ModifyData(spotNumbers, VehicleType.Van);
+        }
+
+        public void MotorcycleOrCarLeave(int spotNumber)
+        {
+            _parkingLotData.ModifyData(spotNumber, VehicleType.None);
+        }
+
+        public void VanLeave(int[] spotsNumber)
+        {
+            _parkingLotData.ModifyData(spotsNumber, VehicleType.None);
         }
     }
 }

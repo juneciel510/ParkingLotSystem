@@ -20,10 +20,13 @@ namespace ParkingLotSystem.Algorithm
                     throw new ParkingException("No such spot number exists in data base");
                 if(spot.Vehicle!=VehicleType.None)
                     throw new ParkingException($"This spot(No.{spotNumber})  is taken, please check.");
-                if (spot.Type != spotType)
+                if (!spot.CanPark(vehicle))
                     throw new ParkingException($"This spot(No.{spotNumber})  does not fit the vehicle, please check.");
 
                 spot.Vehicle = vehicle;
+
+                string msg = vehicle == VehicleType.None ? "The vehicle left" : "The vehicle was successfully parked";
+                Console.WriteLine(msg);
 
                 CheckParikingLotStatus();
 
