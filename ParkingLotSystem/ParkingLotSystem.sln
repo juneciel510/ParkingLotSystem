@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{2FE27EC1-0570-4ED3-B723-EB1507003EDC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingLotSystem.Algorithm", "ParkingLotSystem.Algorithm\ParkingLotSystem.Algorithm.csproj", "{3604D7CE-EFC6-4051-B4FA-D10B9171A15D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingLotSystem.ConsoleUI", "ParkingLotSystem.ConsoleUI\ParkingLotSystem.ConsoleUI.csproj", "{68F56CC7-582E-4903-B09D-EC7B3924267F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2FE27EC1-0570-4ED3-B723-EB1507003EDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2FE27EC1-0570-4ED3-B723-EB1507003EDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2FE27EC1-0570-4ED3-B723-EB1507003EDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2FE27EC1-0570-4ED3-B723-EB1507003EDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3604D7CE-EFC6-4051-B4FA-D10B9171A15D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3604D7CE-EFC6-4051-B4FA-D10B9171A15D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3604D7CE-EFC6-4051-B4FA-D10B9171A15D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3604D7CE-EFC6-4051-B4FA-D10B9171A15D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68F56CC7-582E-4903-B09D-EC7B3924267F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68F56CC7-582E-4903-B09D-EC7B3924267F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68F56CC7-582E-4903-B09D-EC7B3924267F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68F56CC7-582E-4903-B09D-EC7B3924267F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
