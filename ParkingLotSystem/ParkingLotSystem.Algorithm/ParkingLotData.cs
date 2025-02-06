@@ -8,15 +8,14 @@ namespace ParkingLotSystem.Algorithm
 {
     public class ParkingLotData
     {
-        public Dictionary<int, SpotBase> _spots;
-        public ParkingLotData(Dictionary<int, SpotBase> spots) { _spots = spots; }
-        
+        public Dictionary<int, SpotBase> _parkingLot;
+        public ParkingLotData(Dictionary<int, SpotBase> spots) { _parkingLot = spots; }
 
 
         public void ModifyData(int spotNumber, VehicleType vehicle)
         {
             {
-                if (!_spots.TryGetValue(spotNumber, out SpotBase spot))
+                if (!_parkingLot.TryGetValue(spotNumber, out SpotBase spot))
                     throw new ParkingException("No such spot number exists in data base");
                 if(spot.Vehicle!=VehicleType.None)
                     throw new ParkingException($"This spot(No.{spotNumber})  is taken, please check.");
@@ -28,21 +27,8 @@ namespace ParkingLotSystem.Algorithm
                 string msg = vehicle == VehicleType.None ? "The vehicle left" : "The vehicle was successfully parked";
                 Console.WriteLine(msg);
 
-                CheckParikingLotStatus();
+                CheckLotFullOrEmpty();
 
-            }
-        }
-
-        public void CheckParikingLotStatus()
-        {
-            var emptySpotNumber = _spots.Where(pair => pair.Value.Vehicle == VehicleType.None).Count();
-            if (emptySpotNumber == 0)
-            {
-                throw new ParkingException("The parking slot is full");
-            }
-            if (emptySpotNumber == _spots.Count)
-            {
-                throw new ParkingException("The parking slot is empty");
             }
         }
 
@@ -53,5 +39,58 @@ namespace ParkingLotSystem.Algorithm
                 ModifyData(spotNumber[i], vehicle);
             }
         }
+
+        public void CheckLotFullOrEmpty()
+        {
+            if (IsLotFull()) 
+            {
+                throw new ParkingException("The parking slot is full");
+            }
+            if (IsLotEmpty())
+            {
+                throw new ParkingException("The parking slot is empty");
+            }
+        }
+
+        public int CheckEmptySpots()
+        {
+            return CheckSpotsTakenByCertainCarType(VehicleType.None);
+        }
+
+
+        public int CheckSpotsInTotal()
+        {
+            return _parkingLot.Count();
+        }
+
+        public int CheckSpotsTakenByCertainCarType(VehicleType vehicle)
+        {
+            return _parkingLot.Where(pair => pair.Value.Vehicle == vehicle).Count();
+        }
+
+        public int CheckSpotsTakenByVan()
+        {
+            return CheckSpotsTakenByCertainCarType(VehicleType.Van);
+        }
+
+        public bool CheckMotoCycleOrCarSpotsFull()
+        {
+            return _parkingLot.Where(pair => pair.Value.Vehicle == VehicleType.None).Count()==0;
+        }
+        public bool CheckVanSpotsFull()
+        {
+            return _parkingLot.Where(pair => pair.Value.Vehicle == VehicleType.None&& pair.Value.Type==SpotType.Regular).Count() <3;
+        }
+
+        public bool IsLotFull()
+        {
+            return CheckEmptySpots() == 0;
+        }
+
+        public bool IsLotEmpty()
+        {
+            return CheckEmptySpots() == _parkingLot.Count;
+        }
+
     }
 }

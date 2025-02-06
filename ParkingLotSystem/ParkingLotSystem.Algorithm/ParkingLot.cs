@@ -12,7 +12,6 @@ namespace ParkingLotSystem.Algorithm
         public ParkingLot(ParkingLotData parkingLotData) 
         { 
             _parkingLotData = parkingLotData; 
-            _parkingLotData.CheckParikingLotStatus();
         }
 
         public void MotorcyclePark(int spotNumber)
