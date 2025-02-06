@@ -9,8 +9,7 @@ namespace ParkingLotSystem.Algorithm
     public class ParkingLotData
     {
         public Dictionary<int, SpotBase> _parkingLot;
-        public ParkingLotData(Dictionary<int, SpotBase> spots) { _parkingLot = spots; }
-
+        public ParkingLotData(Dictionary<int, SpotBase> parkingLotData) { _parkingLot = parkingLotData; }
 
         public void ModifyData(int spotNumber, VehicleType vehicle)
         {
